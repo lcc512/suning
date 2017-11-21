@@ -1,0 +1,16 @@
+@charset "utf-8";
+// 这个文件写定义的方法
+
+// 适配不同设备屏幕的方法
+
+// deviceWidth 设备宽度
+// baseSize 基准值
+// psdWidth 设计稿宽度
+.adapterFuc(@deviceWidth:750px){
+
+	@media (min-width: @deviceWidth) {
+	html{
+		font-size: @deviceWidth/@psdWidth*@baseSize;
+	}
+}
+}

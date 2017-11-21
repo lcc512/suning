@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+@charset "utf-8";
+
+@import "variables";
+
+@import "mixins";
+
+@import "adapter";
+
+@import "model";
+
+// 这个文件写样式 
+// reset css
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+    clear: both;
+}
+
+body {
+
+    font-size: 14px; // 先固定文字的基本大小
+    font-family: "Microsoft Yahei", sans-serif; //sans表示使用系统的默认字体，这表示当前一个设置好的字体不可用时，用系统的默认字体
+}
+
+// model css
+// 主体容器
+.sn-layout {
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    margin: 0 auto;
+    height: 100px;
+}
+
+// 搜索
+.sn-search {
+    width: 100%;
+    height: 90/@bs;
+    background-color: @snColor;
+    position: relative;
+
+    a {
+        height: 90/@bs;
+        width: 90/@bs;
+        position: absolute;
+        top: 0;
+        &.icon-categary {
+            left: 0; // center 后面和宽高的 斜杠 不能少
+            background: url("../images/categery.png") no-repeat center / 50/@bs 50/@bs;
+        }
+        &.icon-cart {
+            right: 0;
+            background: url("../images/cart.png") no-repeat center / 50/@bs 50/@bs;
+        }
+    }
+
+    form {
+        width: 100%;
+        padding: 0 90/@bs;
+        .icon-search {
+            width: 30/@bs;
+            height: 30/@bs;
+            position: absolute;
+            left: 100/@bs;
+            top: 30/@bs;
+            background: url("../images/icon-seatch.png") no-repeat center / 27/@bs 27/@bs;
+        }
+        input {
+            width: 100%;
+            height: 60/@bs;
+            margin-top: 15/@bs;
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.7);
+            font-size: 24/@bs;
+            text-indent: 50/@bs;
+        }
+    }
+}
+
+// 轮播图模块
+.sn-banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    ul {
+    	list-style: none;
+        // 第一个ul
+        &:first-child {
+        	
+            width: 10*100%;
+            
+            li {
+            	float: left;
+            	width: 100%/10;
+                a {
+                    width: 100%;
+                    display: block;
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+        } // 第二个ul
+        &:last-child {
+        	position: absolute;
+        	right: 20/@bs;
+        	bottom: 20/@bs;
+
+        	li{
+        		float: left;
+        		margin-left: 10/@bs;
+        		width: 10/@bs;
+        		height: 10/@bs;
+        		border-radius: 50%;
+        		background-color: #ffffff;
+
+        		&.now{
+        			background-color: @snColor;
+        		}
+        	}
+
+        }
+    }
+}
