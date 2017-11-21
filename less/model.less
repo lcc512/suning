@@ -52,7 +52,8 @@ body {
     max-width: 750px;
     min-width: 320px;
     margin: 0 auto;
-    height: 100px;
+    padding-top: 90/@bs;
+    padding-bottom: 100/@bs;
 }
 
 // 搜索
@@ -60,7 +61,10 @@ body {
     width: 100%;
     height: 90/@bs;
     background-color: @snColor;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
 
     a {
         height: 90/@bs;
@@ -107,15 +111,14 @@ body {
     overflow: hidden;
     position: relative;
     ul {
-    	list-style: none;
-        // 第一个ul
+        list-style: none; // 第一个ul
         &:first-child {
-        	
+
             width: 10*100%;
-            
+
             li {
-            	float: left;
-            	width: 100%/10;
+                float: left;
+                width: 100%/10;
                 a {
                     width: 100%;
                     display: block;
@@ -127,23 +130,86 @@ body {
             }
         } // 第二个ul
         &:last-child {
-        	position: absolute;
-        	right: 20/@bs;
-        	bottom: 20/@bs;
+            position: absolute;
+            right: 20/@bs;
+            bottom: 20/@bs;
 
-        	li{
-        		float: left;
-        		margin-left: 10/@bs;
-        		width: 10/@bs;
-        		height: 10/@bs;
-        		border-radius: 50%;
-        		background-color: #ffffff;
+            li {
+                float: left;
+                margin-left: 10/@bs;
+                width: 10/@bs;
+                height: 10/@bs;
+                border-radius: 50%;
+                background-color: #ffffff;
 
-        		&.now{
-        			background-color: @snColor;
-        		}
-        	}
-
+                &.now {
+                    background-color: @snColor;
+                }
+            }
         }
     }
+}
+
+// 导航栏
+.sn-nav {
+    width: 100%;
+    ul {
+        list-style: none;
+        width: 100%;
+        padding: 20/@bs 0;
+        li {
+            width: 20%;
+            float: left;
+            a {
+
+                display: block;
+                width: 100%;
+                text-decoration: none;
+                img {
+                    display: block;
+                    width: 120/@bs;
+                    height: 120/@bs;
+                    margin: 0 auto;
+                }
+                p {
+                    font-size: 24/@bs;
+                    padding: 12/@bs 0;
+                    text-align: center;
+                    color: #666;
+                }
+            }
+        }
+    }
+}
+// 底部标签
+.sn-tabs{
+	width: 100%;
+	height: 100/@bs;
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	ul{
+		width: 100%;
+		list-style: none;
+		li{
+			width: 20%;
+			float: left;
+			text-align: center;
+			padding-top: 10/@bs;
+			a{
+				display: block;
+				text-decoration: none;
+				span{
+					font-size: 40/@bs;
+					color: #333;
+				}
+				p{
+					font-size: 24/@bs;
+					color: #666;
+				}
+			}
+		}
+	}
 }
