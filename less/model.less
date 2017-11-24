@@ -106,51 +106,51 @@ body {
 }
 
 // 轮播图模块
-.sn-banner {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    ul {
-        list-style: none; // 第一个ul
-        transform:translateX(-100%/10);
-        -webkit-transform:translateX(-100%/10);
-        &:first-child {
+// .sn-banner {
+//     width: 100%;
+//     overflow: hidden;
+//     position: relative;
+//     ul {
+//         list-style: none; // 第一个ul
+//         transform:translateX(-100%/10);
+//         -webkit-transform:translateX(-100%/10);
+//         &:first-child {
 
-            width: 10*100%;
+//             width: 10*100%;
 
-            li {
-                float: left;
-                width: 100%/10;
-                a {
-                    width: 100%;
-                    display: block;
-                    img {
-                        width: 100%;
-                        display: block;
-                    }
-                }
-            }
-        } // 第二个ul
-        &:last-child {
-            position: absolute;
-            right: 20/@bs;
-            bottom: 20/@bs;
+//             li {
+//                 float: left;
+//                 width: 100%/10;
+//                 a {
+//                     width: 100%;
+//                     display: block;
+//                     img {
+//                         width: 100%;
+//                         display: block;
+//                     }
+//                 }
+//             }
+//         } // 第二个ul
+//         &:last-child {
+//             position: absolute;
+//             right: 20/@bs;
+//             bottom: 20/@bs;
 
-            li {
-                float: left;
-                margin-left: 10/@bs;
-                width: 10/@bs;
-                height: 10/@bs;
-                border-radius: 50%;
-                background-color: #ffffff;
+//             li {
+//                 float: left;
+//                 margin-left: 10/@bs;
+//                 width: 10/@bs;
+//                 height: 10/@bs;
+//                 border-radius: 50%;
+//                 background-color: #ffffff;
 
-                &.now {
-                    background-color: @snColor;
-                }
-            }
-        }
-    }
-}
+//                 &.now {
+//                     background-color: @snColor;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 // 导航栏
 .sn-nav {
